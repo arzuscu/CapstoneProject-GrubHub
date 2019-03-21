@@ -1,0 +1,332 @@
+@import 'variables.scss';
+
+body, a{
+    text-decoration: none;
+    color: $black;
+}
+//HeaderLogin
+
+
+//login
+.loginDiv{
+    border: 1px solid #AFAFAF;
+    background-color: #FAFAFA;
+    border-radius: 4px; 
+    margin: 16px;
+    height: 300px;
+    &__input{
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+    }
+    &__labelOne{
+        display: flex;
+        @include mobile-labels();
+    }
+    &__inputOne{
+        border: 1px solid #AFAFAF;
+        // background-color: #FAFAFA;
+        height: 30px;
+        border-radius: 4px; 
+    }
+    &__inputTwo{
+        border: 1px solid #AFAFAF;
+        // background-color: #FAFAFA;
+        height: 30px;
+        border-radius: 4px; 
+    }
+    &__labelTwo{
+        display: flex;
+        @include mobile-labels();
+    }
+    &__buttonDiv{
+        padding-top: 20px;
+    }
+    &__button{
+        background-color:#008080;
+        color: white;
+        height: 40px;
+        border-radius: 4px; 
+        width: 263px;
+    }
+}
+
+//Header
+.navBarDiv{
+    height: 168px;
+    margin-left: 16px;
+    margin-right: 16px;
+    @media (min-width:$tablet) {
+        height: 80px;
+        display: flex;
+        @media (min-width:$desktop) {
+            justify-content: space-between;
+            margin: 0 180px;
+        }
+    }
+    &__GrubHub{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+        @media (min-width:$tablet) {
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 16px;
+            @media (min-width:$desktop) {
+                
+            }
+        }
+    }
+    &__logo{
+        // margin-top: 20px;
+        @media (min-width:$desktop) {
+                
+        }
+    }
+    &__searchDiv{
+        display: flex;
+        @media (min-width:$tablet) {
+            margin-right: 24px;
+            width: 600px;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 25px;
+                @media (min-width:$desktop) {
+                    
+                }
+            }
+    }
+    &__text{
+        padding-bottom: 10px;
+        @media (min-width:$tablet) {
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 7px;
+            @media (min-width:$desktop) {
+                
+            }
+        }
+    }
+    &__search{
+        background: url('./Icon-search.svg');
+        background-repeat: no-repeat;
+        background-position: 15px;
+        border: 1px solid $silver;
+        width: 250px;
+        height: 35px;
+        border: 1px solid black;
+        border-radius: 20px;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 40px;
+        width: 190px;
+    
+        @media (min-width:$tablet) {
+            width: 390px;
+        }
+    }
+    &__formImg{
+        display: flex;
+    }
+    &--imgDiv{
+        padding-left: 6px;
+        padding-right: 5px;
+        
+    }
+    &--img{
+        display: flex;
+        justify-content: space-evenly;
+        border-radius: 50%;
+        height: 48px;
+        width: 48px;
+    }
+    &--fromDiv{
+
+    }
+    &--from{
+        @include mobile-header-list-contactInfo();
+    }
+}
+//recipeFeed
+.recipeFeed{
+    display: flex;
+    // flex-direction: column;
+    padding: 0 1px;
+    flex-wrap: wrap;
+   &__imgDiv{
+    display: flex;
+    width: 160px;
+    margin: 0 12px;
+   } 
+   &--img{
+        // background: url('./Icon-add.svg');
+        // background-repeat: no-repeat;
+        // background-position: 15px;
+        width: 160px;
+        height: 150px;
+        border-radius: 4px;
+        transition: all 0.3s;
+   }
+   &--img:hover{
+    transform: scale(1.1)
+   }
+   &--iconOne{
+        // position: absolute;
+        // right: 23px;
+        // top: 18rem;
+        border-radius: 10px;
+        background-color: silver;
+   }
+   &--iconTwo{
+    // position: absolute;
+    // right: 23px;
+    // top: 18rem;
+    // border-radius: 10px;
+    // background-color: black;
+}
+   &__textDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 12px;
+    padding: 15px 0;
+
+   }
+   &--foodpic{
+    @include mobile-header-list-contactInfo();
+    margin: 0;
+    padding-bottom: 5px;
+   }
+   &--recipeBy{
+    @include mobile-header-list-contactInfo();
+    color: grey;
+    margin: 0;
+   }
+   &__likeDiv{
+    display: flex;
+    margin: 0;
+    padding-top: 5px;
+   }
+   &--iconText{
+       margin: 0;
+       padding-left: 5px;
+       padding-bottom: 2px;
+   }
+   &__button{
+    width: 300px;
+    height: 45px;
+    border-radius: 12px;
+    background-color: #008080;
+    color: $white;
+    font-weight: bold;
+   }
+}
+
+//ShowRecipes
+.showRecipe{
+    padding: 0 16px;
+   &__imgOne{
+    width: 160px;
+    height: 150px;
+    border-radius: 4px;
+    display: flex;
+   } 
+   &__list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+   }
+   &__recipeName{
+    display: flex;
+    padding-bottom: 10px;
+    @include mobile-header-one();
+   }
+   &__label{
+    display: flex;
+    @include mobile-header-list-contactInfo();
+   }
+   &__steps{
+    @include mobile-paragraphs();
+   }
+}
+//createRecipe
+.createRecipeDiv{
+    &__inputDiv{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-items: center;
+    }
+    &__divOne{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+    &__labelOne{
+        @include mobile-header-list-contactInfo();
+        padding-bottom: 10px;
+    }
+    &__input{
+        border: 1px solid black;
+        border-radius: 15px;
+        height: 40px;
+        width: 300px;
+    }
+    &__divTwo{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+    &__labelTwo{
+        @include mobile-header-list-contactInfo();
+        padding-bottom: 10px;
+    }
+    &__textOne{
+        width: 300px;
+        height: 143px;
+        border: 1px solid black;
+        border-radius: 15px;
+    }
+    &__divThree{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+    &__labelThree{
+        @include mobile-header-list-contactInfo();
+        padding-bottom: 10px;
+    }
+    &__textTwo{
+        width: 300px;
+        height: 143px;
+        border: 1px solid black;
+        border-radius: 15px;
+    }
+    &__divFour{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+    }
+    &__buttonOne{
+        @include mobile-labels();
+        width: 150px;
+        height: 45px;
+        border-radius: 12px;
+        background-color: #008080;
+        color: $white;
+        font-weight: bold;
+    }
+    &__buttonTwo{
+        @include mobile-labels();
+        width: 150px;
+        height: 45px;
+        border-radius: 12px;
+        background-color: #008080;
+        color: $white;
+        font-weight: bold;
+    }
+}
