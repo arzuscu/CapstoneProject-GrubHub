@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-// import ShowRecipeCard from './ShowRecipeCard';
-// import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
 
@@ -21,37 +19,50 @@ export default class ShowRecipe extends Component {
       })
     })
   }
+  clickme = (e) =>{
+    e.preventDefault()
+    console.log(e.target.name)
+    if(e.target.name === 'icon') {
+      let config = {
+          method: 'POST',
+          url: 'http://localhost:8080/favorites',
+          data: {
+          ///////pass the id
+          },
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      }
+      axios(config)
+          .then(response =>{
+              console.log(response)
+          })
+          .catch ((err) => {
+              console.log(err)
+            })
+         ///////
+          window.location ="http://localhost:3000/favorites";
+      } 
+  }
     
   render() {
-   
+
     const {title, ingridients, Directions, image} = this.state.oneRecipe;
 
-    //   const recipeDetail = this.props.recipeDetail;
-    //   console.log(recipeDetail);
-    //   let splitIng = recipeDetail.ingridients.split(',')
-    //   console.log(splitIng);
-    //   let splitIng = recipeDetail.ingridients.split(',').map((item)=>{
-    //   return (
-    // console.log('props',this.props.recipes)
-    //     <Link to={`/recipes/${item.id}`} key={item.id} >
-    //         <ShowRecipeCard image={item.image} title={item.title} ingridients={item.ingridients} directions={item.directions} />
-    //     </Link>
-    //     )
-    // })
+      console.log('ingriedients',ingridients)
+      let output = '';
+      let ingJSX = []
+      // debugger
+      if(ingridients){
+        ingJSX = ingridients.map((item)=>{
+          
+          console.log(item)
+          output = <li>{item}</li>
+          return output
+      })
 
-    
-    console.log(ingridients)
-    let output = '';
-    // debugger
-    if(ingridients){
-      const ingJSX = ingridients.forEach((item)=>{
-        
-        console.log(item)
-        output = <li>{item}</li>
-        return output
-    })
-
-    console.log(ingJSX)
+      console.log('jsx',ingJSX)
+      console.log('output',output)
     }
    
 
@@ -60,18 +71,11 @@ export default class ShowRecipe extends Component {
       <Header/>
       <img className="showRecipe__imgOne" src={image} alt="img"/>
       <label className="showRecipe__recipeName">{title}</label>
-      <label className="showRecipe__label"></label>
+      <label className="showRecipe__label">Ingridients</label>
           <ul className="showRecipe__list">
-              <li className="showRecipe__steps">1 can black beans drained</li>
-              <li className="showRecipe__steps">2 carrots grated</li>
-              <li className="showRecipe__steps">1/2 onion</li>
-              <li className="showRecipe__steps">chopped 3 potatoes shredded</li>
-              <li className="showRecipe__steps">2 1/2 ounces Gorgonzola cheese</li>
-              <li className="showRecipe__steps">1 cup corn</li>
-              <li className="showRecipe__steps">2 eggs</li>
-              <li className="showRecipe__steps">salt and black pepper to taste</li>
-              <li className="showRecipe__steps">2 tablespoons vegetable oil</li>
+            <li className="showRecipe__steps">{ingJSX}</li>
           </ul>
+          <img className="recipeFeed--iconOne"src="../Assets/Icons/SVG/Icon-add.svg" onClick= {this.clickme} name="icon"alt="icon"/>
       <label className="showRecipe__label">Steps</label>
           <p className="showRecipe__steps">{Directions}</p>
     </div>

@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import './App.css';
 import Login from './components/Login';
-// import RecipeFeed from './components/RecipeFeed';
 import Header from './components/Header';
 import Recipes from './components/Recipes';
 import ShowRecipeCard from './components/ShowRecipeCard';
 import ShowRecipe from './components/ShowRecipe';
-import FavRecipeCard from './components/FavRecipeCard';
+import FavRecipe from './components/FavRecipe';
 import CreateRecipe from './components/CreateRecipe';
+import ShowFavs from './components/ShowFavs';
 
 class App extends Component {
-  
+  // state = {
+  //   search: ""
+  // }
   render() {
     return (
       <Router>
@@ -40,10 +42,12 @@ class App extends Component {
             return (
               <>
                 <Header/>
-                <FavRecipeCard {...props}/>
+                <FavRecipe {...props}/>
+                {/* <FavRecipe /> */}
               </>
             )
           }}/>
+          <Route path='/favorites/:id' exact component={ ShowFavs }/>
           <Route path="/createrecipe" exact render={(props) => {
             return (
               <>
@@ -52,6 +56,7 @@ class App extends Component {
               </>
             )
           }}/>
+          {/* <ShowFavs /> */}
         </Switch>
         </div>
       </Router>

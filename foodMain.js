@@ -43,7 +43,7 @@
      },
      {
         id: '106',
-        image: './Assets/Images/curryy.jpg',
+        image: './Assets/Images/curry.jpg',
         title: 'Curry',
         author: 'by Janki',
         likes: '117'
