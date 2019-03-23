@@ -70,6 +70,41 @@ app.post('/recipes', (req, res)=>{
 
 })
 app.post('/favorites', (req, res)=>{
+    
+    const recipeId = req.body.id;
+    const recipeGetDesc = foodDetail.find(item => item.id === recipeId)
+    //const randomId = uuid();
+    const smallRecipe = {
+        id: recipeGetDesc.id,
+        image: recipeGetDesc.image,
+        title: recipeGetDesc.title,
+        author: recipeGetDesc.author,
+        likes: recipeGetDesc.likes,
+    }
+        const bigRecipe = {
+            id: recipeGetDesc.id,
+            image: recipeGetDesc.image,
+            title: recipeGetDesc.title,
+            ingridients: recipeGetDesc.ingridients,
+            Directions: recipeGetDesc.Directions
+        }
+        foodFavs.push(smallRecipe);
+        foodFavsDetail.push(bigRecipe);
+
+        console.log(foodFavs)
+        console.log(foodFavsDetail)
+
+        res.json(smallRecipe);
+        res.json(foodFavsDetail);
+        
+        
+    
+        // console.log(recipeGetDesc)
+        // console.log(smallRecipe)
+        // console.log(bigRecipe)
+})
+
+app.post('/favoritesME', (req, res)=>{
     const randomId = uuid();
     const smallRecipe = {
         id: randomId,
@@ -91,11 +126,26 @@ app.post('/favorites', (req, res)=>{
         console.log(foodFavs)
         console.log(foodFavsDetail)
 
-        // res.json(smallRecipe);
+        res.json(smallRecipe);
         res.json(foodFavsDetail);
-        
 
 })
+
+// app.get('/search/:title', (req, res)=>{
+//     const title = req.params.title;
+    
+//     const recipeGetDesc = foodDetail.filter(item => item.title === title)
+//     res.json(recipeGetDesc)
+
+// })
+// POST OR GET 
+// /sraerch/{title}
+// req.body = title
+// res = array(list) of recipes that have the same Titel
+// inside the endpoint
+//const recipetitle = req.body.title;
+// const recipeGetDesc = foodDetail.find(item => item.title === recipetitle)
+//
 
 
 app.listen(PORT, () =>{

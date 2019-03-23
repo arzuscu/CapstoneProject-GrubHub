@@ -4,6 +4,10 @@ import Header from './Header';
 
 
 export default class ShowRecipe extends Component {
+  constructor(){
+    super()
+    this.recipeFavForm = React.createRef();
+  }
 
   state = {
     oneRecipe: ''
@@ -27,7 +31,11 @@ export default class ShowRecipe extends Component {
           method: 'POST',
           url: 'http://localhost:8080/favorites',
           data: {
-          ///////pass the id
+            id: this.props.match ? this.props.match.params.id : null
+            // img: this.recipeForm.current.img.value,
+            // title: this.recipeForm.current.title.value,
+            // ingridients: this.recipeForm.current.ingridients.value.split(','),
+            // Directions: this.recipeForm.current.steps.value
           },
           headers: {
               'Content-Type': 'application/json'
@@ -69,15 +77,17 @@ export default class ShowRecipe extends Component {
     return (
       <div className="showRecipe">
       <Header/>
-      <img className="showRecipe__imgOne" src={image} alt="img"/>
-      <label className="showRecipe__recipeName">{title}</label>
+      <form ref = {this.recipeFavForm}>
+      <img className="showRecipe__imgOne" id="img"src={image} alt="img"/>
+      <label id="title"className="showRecipe__recipeName">{title}</label>
       <label className="showRecipe__label">Ingridients</label>
           <ul className="showRecipe__list">
-            <li className="showRecipe__steps">{ingJSX}</li>
+            <li id="ingridients"className="showRecipe__steps">{ingJSX}</li>
           </ul>
           <img className="recipeFeed--iconOne"src="../Assets/Icons/SVG/Icon-add.svg" onClick= {this.clickme} name="icon"alt="icon"/>
       <label className="showRecipe__label">Steps</label>
-          <p className="showRecipe__steps">{Directions}</p>
+          <p className="showRecipe__steps" id="directions">{Directions}</p>
+          </form>
     </div>
     )
   }

@@ -15,7 +15,7 @@ export default class CreateRecipe extends Component {
         if(e.target.name === 'fav') {
             let config = {
                 method: 'POST',
-                url: 'http://localhost:8080/favorites',
+                url: 'http://localhost:8080/favoritesME',
                 data: {
                 title: this.recipeForm.current.title.value,
                 ingridients: this.recipeForm.current.ingridients.value.split(','),
