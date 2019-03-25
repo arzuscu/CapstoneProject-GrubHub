@@ -6,9 +6,13 @@ import {Link} from 'react-router-dom';
 export default class RecipeFeed extends Component {
   render() {
     const recipes = this.props.recipes;
-    // let filterRecipe = recipes.filter(recipes => recipes.id !== this.props.current);
+    const search = this.props.search;
+    
+    const filterRecipe = recipes.filter( recipes =>{
+      return recipes.title.indexOf( search ) === -1
+    })
 
-    const recipeMap = recipes.map((item)=>{
+    const recipeMap = filterRecipe.map((item)=>{
       return (
       <Link to={`/recipes/${item.id}`} key={item.id} >
         <RecipeCard image={item.image} title={item.title} author={item.author} likes={item.likes}  />
@@ -23,3 +27,5 @@ export default class RecipeFeed extends Component {
     )
   }
 }
+
+

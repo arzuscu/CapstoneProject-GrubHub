@@ -25,7 +25,6 @@ app.get('/recipes', (req, res) =>{
 
 app.get('/recipes/:id', (req, res) =>{
     const recipeId = req.params.id;
-    // console.log(recipeId)
     
     const recipeGetDesc = foodDetail.find(item => item.id === recipeId)
     res.json(recipeGetDesc)
@@ -37,7 +36,6 @@ app.get('/favorites', (req, res) =>{
 
 app.get('/favorites/:id', (req,res) =>{
     const favsId = req.params.id;
-    console.log('id',favsId)
     const favsGetDesc = foodFavsDetail.find(item =>item.id === favsId)
     res.json(favsGetDesc)
 });
@@ -61,9 +59,6 @@ app.post('/recipes', (req, res)=>{
         foodMain.push(smallRecipe);
         foodDetail.push(bigRecipe);
 
-        console.log(foodMain)
-        console.log(foodDetail)
-
         // res.json(smallRecipe);
         res.json(bigRecipe);
         
@@ -73,13 +68,14 @@ app.post('/favorites', (req, res)=>{
     
     const recipeId = req.body.id;
     const recipeGetDesc = foodDetail.find(item => item.id === recipeId)
+    const recipeGetMain = foodMain.find(item => item.id === recipeId)
     //const randomId = uuid();
     const smallRecipe = {
-        id: recipeGetDesc.id,
-        image: recipeGetDesc.image,
-        title: recipeGetDesc.title,
-        author: recipeGetDesc.author,
-        likes: recipeGetDesc.likes,
+        id: recipeGetMain.id,
+        image: recipeGetMain.image,
+        title: recipeGetMain.title,
+        author: recipeGetMain.author,
+        likes: recipeGetMain.likes,
     }
         const bigRecipe = {
             id: recipeGetDesc.id,
@@ -91,17 +87,9 @@ app.post('/favorites', (req, res)=>{
         foodFavs.push(smallRecipe);
         foodFavsDetail.push(bigRecipe);
 
-        console.log(foodFavs)
-        console.log(foodFavsDetail)
-
         res.json(smallRecipe);
         res.json(foodFavsDetail);
-        
-        
-    
-        // console.log(recipeGetDesc)
-        // console.log(smallRecipe)
-        // console.log(bigRecipe)
+
 })
 
 app.post('/favoritesME', (req, res)=>{

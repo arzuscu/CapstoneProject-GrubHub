@@ -4,6 +4,7 @@ import FavRecipeCard from './FavRecipeCard';
 
 export default class FavFeed extends Component {
   render() {
+      
     const favs = this.props.favorites;
     console.log(this.props.favorites)
     
@@ -15,9 +16,15 @@ export default class FavFeed extends Component {
             </Link>
             )
     }):null
+
     return (
+        
         <div className="recipeFeed">
+        {/* <div className="recipeFeed__labelDiv">
+            <label className="showRecipe__labelOne">FAVORITES</label>
+        </div> */}
             { favsMap }
+        {/* <label className="showRecipe__labelOne">FAVORITES</label> */}
             <div className="recipeFeed__btn">
             <Link to ={"/createrecipe"}><button className="recipeFeed__button" type="button">CREATE RECIPE</button></Link>
             </div>

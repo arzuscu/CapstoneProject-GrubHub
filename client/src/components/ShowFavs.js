@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Header from './Header';
-import {Link} from 'react-router-dom';
 
 export default class ShowFavs extends Component {
     state = {
@@ -35,9 +34,6 @@ export default class ShowFavs extends Component {
         output = <li>{item}</li>
         return output
     })
-
-    console.log('jsx',ingJSX)
-    console.log('output',output)
   }
     return (
       <div>

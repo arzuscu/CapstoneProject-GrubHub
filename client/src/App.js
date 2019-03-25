@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import Login from './components/Login';
 import Header from './components/Header';
 import Recipes from './components/Recipes';
-import ShowRecipeCard from './components/ShowRecipeCard';
 import ShowRecipe from './components/ShowRecipe';
 import FavRecipe from './components/FavRecipe';
 import CreateRecipe from './components/CreateRecipe';
 import ShowFavs from './components/ShowFavs';
 
 class App extends Component {
-  // state = {
-  //   search: ""
-  // }
+  
   render() {
     return (
       <Router>

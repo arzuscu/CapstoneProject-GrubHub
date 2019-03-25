@@ -4,8 +4,6 @@ body, a{
     text-decoration: none;
     color: $black;
 }
-//HeaderLogin
-
 
 //login
 .loginDiv{
@@ -25,13 +23,11 @@ body, a{
     }
     &__inputOne{
         border: 1px solid #AFAFAF;
-        // background-color: #FAFAFA;
         height: 30px;
         border-radius: 4px; 
     }
     &__inputTwo{
         border: 1px solid #AFAFAF;
-        // background-color: #FAFAFA;
         height: 30px;
         border-radius: 4px; 
     }
@@ -56,56 +52,18 @@ body, a{
     height: 168px;
     margin-left: 16px;
     margin-right: 16px;
-    @media (min-width:$tablet) {
-        height: 80px;
-        display: flex;
-        @media (min-width:$desktop) {
-            justify-content: space-between;
-            margin: 0 180px;
-        }
-    }
+      
     &__GrubHub{
         display: flex;
         justify-content: center;
         padding-bottom: 10px;
-        @media (min-width:$tablet) {
-            display: flex;
-            justify-content: flex-start;
-            padding-left: 16px;
-            @media (min-width:$desktop) {
-                
-            }
-        }
-    }
-    &__logo{
-        // margin-top: 20px;
-        @media (min-width:$desktop) {
-                
-        }
     }
     &__searchDiv{
         display: flex;
-        @media (min-width:$tablet) {
-            margin-right: 24px;
-            width: 600px;
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 25px;
-                @media (min-width:$desktop) {
-                    
-                }
-            }
     }
     &__text{
         padding-bottom: 10px;
-        @media (min-width:$tablet) {
-            padding-right: 20px;
-            padding-top: 5px;
-            padding-bottom: 7px;
-            @media (min-width:$desktop) {
-                
-            }
-        }
+       
     }
     &__search{
         background: url('./Icon-search.svg');
@@ -120,18 +78,13 @@ body, a{
         justify-content: flex-start;
         padding-left: 40px;
         width: 190px;
-    
-        @media (min-width:$tablet) {
-            width: 390px;
-        }
     }
     &__formImg{
         display: flex;
     }
     &--imgDiv{
         padding-left: 6px;
-        padding-right: 5px;
-        
+        padding-right: 5px;  
     }
     &--img{
         display: flex;
@@ -140,9 +93,6 @@ body, a{
         height: 48px;
         width: 48px;
     }
-    &--fromDiv{
-
-    }
     &--from{
         @include mobile-header-list-contactInfo();
     }
@@ -150,47 +100,48 @@ body, a{
 //recipeFeed
 .recipeFeed{
     display: flex;
-    // flex-direction: column;
     padding: 0 1px;
     flex-wrap: wrap;
+    &__labelOne{
+        @include mobile-header-list-contactInfo();
+        padding-bottom: 10px;
+        }
    &__imgDiv{
     display: flex;
     width: 160px;
     margin: 0 12px;
    } 
    &--img{
-        // background: url('./Icon-add.svg');
-        // background-repeat: no-repeat;
-        // background-position: 15px;
-        width: 160px;
-        height: 150px;
-        border-radius: 4px;
-        transition: all 0.3s;
+    width: 160px;
+    height: 150px;
+    border-radius: 4px;
+    transition: all 0.3s;
    }
    &--img:hover{
     transform: scale(1.1)
    }
    &--iconOne{
-        // position: absolute;
-        // right: 23px;
-        // top: 18rem;
-        border-radius: 10px;
-        background-color: silver;
+    width: 20px;
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;   
    }
-   &--iconTwo{
-    // position: absolute;
-    // right: 23px;
-    // top: 18rem;
-    // border-radius: 10px;
-    // background-color: black;
-}
+  &__divIcon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #008080;
+    opacity: 0.6;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vw;
+    }
    &__textDiv{
     display: flex;
     flex-direction: column;
     align-items: start;
     margin: 0 12px;
     padding: 15px 0;
-
    }
    &--foodpic{
     @include mobile-header-list-contactInfo();
@@ -254,6 +205,7 @@ body, a{
     text-align: left;
    }
 }
+
 //createRecipe
 .createRecipeDiv{
     &__inputDiv{
@@ -316,7 +268,6 @@ body, a{
         padding: 10px 0;
     }
     &__buttonOne{
-        // @include mobile-labels();
         width: 150px;
         height: 45px;
         border-radius: 12px;
@@ -325,7 +276,6 @@ body, a{
         font-weight: bold;
     }
     &__buttonTwo{
-        // @include mobile-labels();
         width: 150px;
         height: 45px;
         border-radius: 12px;

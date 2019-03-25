@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import FavFeed from './FavFeed';
-import ShowFavs from './ShowFavs';
-import {Link} from 'react-router-dom';
 
 export default class FavRecipe extends Component {
     constructor(props){

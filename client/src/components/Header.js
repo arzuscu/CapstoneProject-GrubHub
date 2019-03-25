@@ -3,6 +3,13 @@ import './style/index.scss'
 import {Link} from 'react-router-dom';
 
 export default class Header extends Component {
+  state = {
+    search: ""
+  }
+
+  onChange = e =>{
+    this.setState({ search : e.target.value });
+  }
   render() {
     return (
       <div className="navBarDiv">
@@ -11,7 +18,7 @@ export default class Header extends Component {
         </div>
         <div className="navBarDiv__searchDiv">
             <div className="navBarDiv__text">
-                <input className="navBarDiv__search"type="text" placeholder="Search" name="search" onChange={this.onChange} style={{paddingLeft: '40px'}}/>
+                <input className="navBarDiv__search"type="text" placeholder="Search" icon="search" onChange={this.onChange} style={{paddingLeft: '40px'}}/>
             </div>
             <div className="navBarDiv__formImg">
                 <div className="navBarDiv--imgDiv">
