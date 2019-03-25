@@ -8,7 +8,6 @@ export default class ShowFavs extends Component {
       }
     
       componentDidMount(){
-          console.log(this.props.match)
         const id = this.props.match ? this.props.match.params.id : null;
         
         axios.get(`http://localhost:8080/favorites/${id}`)
@@ -21,32 +20,30 @@ export default class ShowFavs extends Component {
 
 
   render() {
-    const {title, ingridients, Directions, image} = this.state.oneFavs;
+    const { title, ingridients, Directions, image} = this.state.oneFavs;
 
-    console.log('ingriedients',ingridients)
-    let output = '';
     let ingJSX = []
     // debugger
     if(ingridients){
-      ingJSX = ingridients.map((item)=>{
-        
-        console.log(item)
-        output = <li>{item}</li>
-        return output
+      ingJSX = ingridients.map((item,index)=>{
+        return <li key={index}>{item}</li>
     })
   }
     return (
       <div>
         <div className="showRecipe">
         <Header/>
+        <div>
             <img className="showRecipe__imgOne" src={image} alt="img"/>
             <label className="showRecipe__recipeName">{title}</label>
             <label className="showRecipe__label">Ingridients</label>
                 <ul className="showRecipe__list">
-                    <li className="showRecipe__steps">{ingJSX}</li>
+                    {/* <li className="showRecipe__steps">{ingJSX}</li> */}
+                    {ingJSX}
                 </ul>
             <label className="showRecipe__label">Steps</label>
             <p className="showRecipe__steps">{Directions}</p>
+            </div>
         </div>
       </div>
     )

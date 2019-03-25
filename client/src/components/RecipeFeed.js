@@ -9,8 +9,9 @@ export default class RecipeFeed extends Component {
     const search = this.props.search;
     
     const filterRecipe = recipes.filter( recipes =>{
-      return recipes.title.indexOf( search ) === -1
+      return recipes.title.toLowerCase().indexOf( search.toLowerCase() ) !== -1
     })
+  
 
     const recipeMap = filterRecipe.map((item)=>{
       return (

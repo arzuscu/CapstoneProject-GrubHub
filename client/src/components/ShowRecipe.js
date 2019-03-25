@@ -25,7 +25,6 @@ export default class ShowRecipe extends Component {
   }
   clickme = (e) =>{
     e.preventDefault()
-    console.log(e.target.name)
     if(e.target.name === 'icon') {
       let config = {
           method: 'POST',
@@ -52,34 +51,28 @@ export default class ShowRecipe extends Component {
     
   render() {
 
-    const {title, ingridients, Directions, image} = this.state.oneRecipe;
+    const {id, title, ingridients, Directions, image} = this.state.oneRecipe;
 
-      console.log('ingriedients',ingridients)
-      let output = '';
       let ingJSX = []
       // debugger
       if(ingridients){
-        ingJSX = ingridients.map((item)=>{
-          
-          console.log(item)
-          output = <li>{item}</li>
-          return output
+        ingJSX = ingridients.map((item,index)=>{
+          return <li key={index}>{item}</li>
       })
 
-      console.log('jsx',ingJSX)
-      console.log('output',output)
     }
    
 
     return (
       <div className="showRecipe">
       <Header/>
-      <form ref = {this.recipeFavForm}>
+      <form ref = {this.recipeFavForm} key={id}>
       <img className="showRecipe__imgOne" id="img"src={image} alt="img"/>
       <label id="title"className="showRecipe__recipeName">{title}</label>
       <label className="showRecipe__label">Ingridients</label>
           <ul className="showRecipe__list">
-            <li id="ingridients"className="showRecipe__steps">{ingJSX}</li>
+            {/* <li id="ingridients"className="showRecipe__steps"></li> */}
+            {ingJSX}
           </ul>
           <div className="recipeFeed__divIcon">
             <img className="recipeFeed--iconOne"src="../Assets/Icons/SVG/Icon-add.svg" onClick= {this.clickme} name="icon"alt="icon"/>

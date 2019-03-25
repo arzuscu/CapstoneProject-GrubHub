@@ -12,7 +12,7 @@ const foodFavsDetail = [
     image: '../Assets/Images/quiche.jpg',
     author: 'by Roisin',
     title: 'Quiche',
-    ingridients:['2 cups milk', '4 eggs', '3/4 cup biscuit baking mix', '1/4 cup butter softened', '1 cup grated Parmesan cheese', '1 (10 ounce) package chopped frozen broccoli', 'Thawed and drained 1 cup cubed cooked ham', '8 ounces shredded Cheddar cheese'],
+    ingridients:['2 cups milk', '4 eggs', '3/4 cup biscuit baking mix', '1/4 cup butter softened', '1 cup grated Parmesan cheese', '1 (10 ounce)  chopped broccoli', '1 cup cubed cooked ham', '8 ounces shredded Cheddar cheese'],
     Directions: 'Preheat oven to 375 degrees F (190 degrees C). Lightly grease a 10 inch quiche dish.In a large bowl, beat together milk, eggs, baking mix, butter and parmesan cheese. Batter will be lumpy. Stir in broccoli, ham and Cheddar cheese. Pour into prepared quiche dish. Bake in preheated oven for 50 minutes, until eggs are set and top is golden brown.'  
     },
 ]

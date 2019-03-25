@@ -69,7 +69,7 @@ app.post('/favorites', (req, res)=>{
     const recipeId = req.body.id;
     const recipeGetDesc = foodDetail.find(item => item.id === recipeId)
     const recipeGetMain = foodMain.find(item => item.id === recipeId)
-    //const randomId = uuid();
+    const randomId = uuid();
     const smallRecipe = {
         id: recipeGetMain.id,
         image: recipeGetMain.image,
@@ -87,8 +87,10 @@ app.post('/favorites', (req, res)=>{
         foodFavs.push(smallRecipe);
         foodFavsDetail.push(bigRecipe);
 
-        res.json(smallRecipe);
-        res.json(foodFavsDetail);
+        let arr = {...smallRecipe,...foodFavsDetail}
+        // res.json(smallRecipe);
+        // res.json(foodFavsDetail);
+        // res.json(arr);
 
 })
 
@@ -111,15 +113,12 @@ app.post('/favoritesME', (req, res)=>{
         foodFavs.push(smallRecipe);
         foodFavsDetail.push(bigRecipe);
 
-        console.log(foodFavs)
-        console.log(foodFavsDetail)
-
         res.json(smallRecipe);
         res.json(foodFavsDetail);
 
 })
 
-app.get('/search/:title', (req, res)=>{
+app.post('/search', (req, res)=>{
     const title = req.params.title;
     
     const recipeGetDesc = foodDetail.filter(item => item.title === title)

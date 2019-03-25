@@ -10,9 +10,7 @@ export default class Recipes extends Component {
           recipes:[]
         }
       }
-      state = {
-        search: ""
-      }
+    
     
       componentDidMount(){
         let url = "http://localhost:8080/recipes";
@@ -32,7 +30,7 @@ export default class Recipes extends Component {
    
     return (
       <div>
-        <RecipeFeed recipes={this.state.recipes} search={this.state.search}/>
+        <RecipeFeed recipes={this.state.recipes} search={this.props.search}/>
       </div>
     )
   }

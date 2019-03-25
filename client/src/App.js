@@ -8,9 +8,20 @@ import ShowRecipe from './components/ShowRecipe';
 import FavRecipe from './components/FavRecipe';
 import CreateRecipe from './components/CreateRecipe';
 import ShowFavs from './components/ShowFavs';
+// import Search from './components/Search';
 
 class App extends Component {
-  
+  state ={
+    search: ""
+
+  }
+
+  handleSearch = (e) => {
+    this.setState({
+      search: e.target.value
+    })
+  }
+
   render() {
     return (
       <Router>
@@ -21,8 +32,8 @@ class App extends Component {
           <Route path="/recipes" exact render={(props) => {
             return (
               <>
-                <Header/>
-                <Recipes {...props}/>
+                <Header search={this.handleSearch}/>
+                <Recipes {...props} search={this.state.search}/>
               </>
             )
           }}/>
@@ -54,6 +65,7 @@ class App extends Component {
             )
           }}/>
           {/* <ShowFavs /> */}
+          {/* <Route path="/search" component={Search}/> */}
         </Switch>
         </div>
       </Router>

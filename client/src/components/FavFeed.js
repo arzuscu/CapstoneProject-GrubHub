@@ -6,13 +6,11 @@ export default class FavFeed extends Component {
   render() {
       
     const favs = this.props.favorites;
-    console.log(this.props.favorites)
     
     const favsMap = favs ? favs.map((item)=>{
         return (
             <Link to={`/favorites/${item.id}`} key={item.id} >
-              <FavRecipeCard image={item.image} title={item.title} author={item.author} likes={item.likes} 
-             />
+              <FavRecipeCard image={item.image} title={item.title} author={item.author} likes={item.likes} />
             </Link>
             )
     }):null

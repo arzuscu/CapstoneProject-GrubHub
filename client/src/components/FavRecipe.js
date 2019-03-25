@@ -23,7 +23,6 @@ export default class FavRecipe extends Component {
       } 
       
   render() {
-    console.log(this.state.favorites)
     return (
       <div>
         <FavFeed favorites={this.state.favorites}/>
