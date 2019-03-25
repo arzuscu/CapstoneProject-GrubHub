@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class RecipeCard extends Component {
   render() {
     return (
-      <div>
+      <div className="recipeFeed__card">
         <div className="recipeFeed__imgDiv">
             <img className="recipeFeed--img"src={this.props.image} alt="pic"/>
         </div>

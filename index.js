@@ -119,13 +119,15 @@ app.post('/favoritesME', (req, res)=>{
 
 })
 
-// app.get('/search/:title', (req, res)=>{
-//     const title = req.params.title;
+app.get('/search/:title', (req, res)=>{
+    const title = req.params.title;
     
-//     const recipeGetDesc = foodDetail.filter(item => item.title === title)
-//     res.json(recipeGetDesc)
+    const recipeGetDesc = foodDetail.filter(item => item.title === title)
+    res.json(recipeGetDesc)
 
-// })
+})
+
+
 // POST OR GET 
 // /sraerch/{title}
 // req.body = title

@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
 import './style/index.scss'
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 export default class Header extends Component {
   state = {
     search: ""
   }
+
+  componentDidMount(){
+    console.log(this.props.match)
+  const title = this.props.match ? this.props.match.params.title : null;
+  
+  axios.get(`http://localhost:8080/search/${title}`)
+  .then(res => {
+    this.setState({
+      search: res.data
+    })
+  })
+}
 
   onChange = e =>{
     this.setState({ search : e.target.value });

@@ -5,7 +5,7 @@ export default class FavRecipeCard extends Component {
   
     return (
       
-      <div>
+      <div className="recipeFeed__card">
         {/* <label className="showRecipe__labelOne">FAVORITES</label> */}
         <div className="recipeFeed__imgDiv">
             <img className="recipeFeed--img"src={this.props.image} alt="pic"/>

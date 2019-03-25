@@ -102,6 +102,11 @@ body, a{
     display: flex;
     padding: 0 1px;
     flex-wrap: wrap;
+    &__card{
+    box-shadow: 1px 1px 15px #ccc;
+    margin-bottom: 26px;
+    padding-top: 10px;
+    }
     &__labelOne{
         @include mobile-header-list-contactInfo();
         padding-bottom: 10px;
