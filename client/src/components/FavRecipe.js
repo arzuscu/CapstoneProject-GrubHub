@@ -25,7 +25,8 @@ export default class FavRecipe extends Component {
   render() {
     return (
       <div>
-        <FavFeed favorites={this.state.favorites}/>
+        <label className="showRecipe__labelOne">ARZU'S FAVORITES</label>
+        <FavFeed favorites={this.state.favorites} search={this.props.search}/>
       </div>
     )
   }

@@ -49,8 +49,8 @@ class App extends Component {
           <Route path="/favorites" exact render={(props) => {
             return (
               <>
-                <Header/>
-                <FavRecipe {...props}/>
+                <Header search={this.handleSearch}/>
+                <FavRecipe {...props} search={this.state.search}/>
                 {/* <FavRecipe /> */}
               </>
             )

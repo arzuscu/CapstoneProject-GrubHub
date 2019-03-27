@@ -16,7 +16,7 @@ export default class Login extends Component {
                     <label className="loginDiv__labelOne">EMAIL</label>
                     <input className="loginDiv__inputOne"type="text" name="email" placeholder="Email" />
                     <label className="loginDiv__labelTwo">PASSWORD</label>
-                    <input className="loginDiv__inputTwo"type="text" name="password" placeholder="Password" />
+                    <input className="loginDiv__inputTwo"type="password" name="password" placeholder="Password" />
                     <div className="loginDiv__buttonDiv">
                         <Link to={"/recipes"}><button className="loginDiv__button"type="submit" >LOGIN</button></Link>
                     </div>

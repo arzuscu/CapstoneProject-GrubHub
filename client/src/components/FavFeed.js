@@ -6,8 +6,13 @@ export default class FavFeed extends Component {
   render() {
       
     const favs = this.props.favorites;
+    const search = this.props.search;
     
-    const favsMap = favs ? favs.map((item)=>{
+    const filterRecipe = favs.filter( favs =>{
+      return favs.title.toLowerCase().indexOf( search.toLowerCase() ) !== -1
+    })
+    
+    const favsMap = favs ? filterRecipe.map((item)=>{
         return (
             <Link to={`/favorites/${item.id}`} key={item.id} >
               <FavRecipeCard image={item.image} title={item.title} author={item.author} likes={item.likes} />

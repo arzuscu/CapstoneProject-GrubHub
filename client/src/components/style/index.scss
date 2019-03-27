@@ -1,5 +1,10 @@
 @import 'variables.scss';
 
+* {
+    font-family: 'Lato', sans-serif !important;
+
+}
+
 body, a{
     text-decoration: none;
     color: $black;
@@ -196,6 +201,13 @@ body, a{
 //ShowRecipes
 .showRecipe{
     padding: 0 16px;
+    &__labelOne{
+        @include mobile-header-list-contactInfo();
+        padding-bottom: 10px;
+        display: flex;
+        padding-left: 16px;
+        padding-bottom: 16px;
+    }
    &__imgOne{
     width: 160px;
     height: 150px;
@@ -240,12 +252,16 @@ body, a{
     &__labelOne{
         @include mobile-header-list-contactInfo();
         padding-bottom: 10px;
+        padding-left: 7px;
     }
     &__input{
         border: 1px solid black;
         border-radius: 15px;
         height: 40px;
         width: 300px;
+    }
+    &__input:focus {
+        outline: none;
     }
     &__divTwo{
         display: flex;
@@ -256,12 +272,18 @@ body, a{
     &__labelTwo{
         @include mobile-header-list-contactInfo();
         padding-bottom: 10px;
+        padding-left: 7px;
     }
     &__textOne{
         width: 300px;
         height: 143px;
         border: 1px solid black;
         border-radius: 15px;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    &__textOne:focus {
+        outline: none;
     }
     &__divThree{
         display: flex;
@@ -272,12 +294,18 @@ body, a{
     &__labelThree{
         @include mobile-header-list-contactInfo();
         padding-bottom: 10px;
+        padding-left: 7px;
     }
     &__textTwo{
         width: 300px;
         height: 143px;
         border: 1px solid black;
         border-radius: 15px;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    &__textTwo:focus {
+        outline: none;
     }
     &__divFour{
         display: flex;
