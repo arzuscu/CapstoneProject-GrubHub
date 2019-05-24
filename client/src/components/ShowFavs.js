@@ -36,7 +36,7 @@ export default class ShowFavs extends Component {
         <div>
             <img className="showRecipe__imgOne" src={image} alt="img"/>
             <label className="showRecipe__recipeName">{title}</label>
-            <label className="showRecipe__label">Ingridients</label>
+            <label className="showRecipe__label">Ingredients</label>
                 <ul className="showRecipe__list">
                     {/* <li className="showRecipe__steps">{ingJSX}</li> */}
                     {ingJSX}

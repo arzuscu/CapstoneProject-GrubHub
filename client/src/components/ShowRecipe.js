@@ -69,7 +69,7 @@ export default class ShowRecipe extends Component {
       <form ref = {this.recipeFavForm} key={id}>
       <img className="showRecipe__imgOne" id="img"src={image} alt="img"/>
       <label id="title"className="showRecipe__recipeName">{title}</label>
-      <label className="showRecipe__label">Ingridients</label>
+      <label className="showRecipe__label">Ingredients</label>
           <ul className="showRecipe__list">
             {/* <li id="ingridients"className="showRecipe__steps"></li> */}
             {ingJSX}
